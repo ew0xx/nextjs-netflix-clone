@@ -16,20 +16,14 @@ export function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { id = 1 } }) {
-  try {
-    const movie = await getMovie(id);
+export async function getStaticProps({ params }) {
+  const movie = await getMovie(params);
 
-    return {
-      props: {
-        movie,
-      },
-    };
-  } catch (err) {
-    console.log({
-      Error: err,
-    });
-  }
+  return {
+    props: {
+      movie,
+    },
+  };
 }
 
 const Movies = ({ movie }) => {
