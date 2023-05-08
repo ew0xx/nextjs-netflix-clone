@@ -8,22 +8,22 @@ interface Props {
   movies: Movie[];
 }
 
-const Row = ({ title, movies }: Props) => {
-  const rowRef = useRef<HTMLDivElement>(null);
+const Categories = ({ title, movies }: Props) => {
+  const categoriesRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
   const handleClick = (direction: string) => {
     setIsMoved(true);
 
-    if (rowRef.current) {
-      const { scrollLeft, clientWidth } = rowRef.current;
+    if (categoriesRef.current) {
+      const { scrollLeft, clientWidth } = categoriesRef.current;
 
       const scrollTo =
         direction === "left"
           ? scrollLeft - clientWidth
           : scrollLeft + clientWidth;
 
-      rowRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+      categoriesRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
   };
 
@@ -40,7 +40,7 @@ const Row = ({ title, movies }: Props) => {
           onClick={() => handleClick("left")}
         />
         <div
-          ref={rowRef}
+          ref={categoriesRef}
           className="flex items-center space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2 scrollbar-hide"
         >
           {movies.map((movie) => (
@@ -56,4 +56,4 @@ const Row = ({ title, movies }: Props) => {
   );
 };
 
-export default Row;
+export default Categories;

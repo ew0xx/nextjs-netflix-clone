@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import Logo from "../assets/logo2.png";
 import { useEffect, useState } from "react";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,37 +16,46 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className={`${isScrolled && "bg-[#141414]"}`}>
+    <header className={`${isScrolled && "bg-[#120C1D]"}`}>
       <div className="flex items-center sp ace-x-2 md:space-x-10">
-        <Image
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-          width={100}
-          height={100}
-          className="cursor-pointer object-contain"
-          alt="Netlifx-Logo"
-        />
-
+        <Link href="/">
+          <Image
+            src={Logo}
+            width={100}
+            height={100}
+            className="cursor-pointer object-contain"
+            alt="Netlifx-Logo"
+          />
+        </Link>
         <ul className="hidden space-x-4 md:flex">
-          <li className="headerLink">Home</li>
-          <li className="headerLink">TV Shows</li>
-          <li className="headerLink">Movies</li>
-          <li className="headerLink">New & Popular</li>
-          <li className="headerLink">My List</li>
+          <Link href="/">
+            <li className="headerLink">Home</li>
+          </Link>
+          <Link href={`/genre/${28}`}>
+            <li className="headerLink">Action Movies</li>
+          </Link>
+          <Link href={`/genre/${35}`}>
+            <li className="headerLink">Comedy Movies</li>
+          </Link>
+          <Link href={`/genre/${10749}`}>
+            <li className="headerLink">Romance Movies</li>
+          </Link>
+          <Link href={`/genre/${99}`}>
+            <li className="headerLink">Documantaries</li>
+          </Link>
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">
         <MagnifyingGlassIcon className="hidden sm:inline h-6 w-6" />
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6" />
-        <Link href="/account">
-          <Image
-            src="https://www.svgrepo.com/show/794/male-user.svg"
-            alt="userImage"
-            className="cursor-pointer rounded bg-white"
-            width={30}
-            height={30}
-          ></Image>
-        </Link>
+        <Image
+          src="https://www.svgrepo.com/show/794/male-user.svg"
+          alt="userImage"
+          className="cursor-pointer rounded bg-white"
+          width={30}
+          height={30}
+        ></Image>
       </div>
     </header>
   );
