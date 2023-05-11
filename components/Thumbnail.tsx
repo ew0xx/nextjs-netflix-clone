@@ -1,4 +1,4 @@
-import { modalState, movieState } from "@/atoms/modelAtom";
+import { modalState, movieState } from "@/atoms/modalAtom";
 import { baseUrl } from "@/constants/movie";
 import { Movie } from "@/typings";
 import Image from "next/image";

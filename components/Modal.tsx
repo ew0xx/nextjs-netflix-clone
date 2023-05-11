@@ -11,7 +11,7 @@ import {
   SpeakerWaveIcon,
 } from "@heroicons/react/24/outline";
 import { useRecoilState } from "recoil";
-import { modalState, movieState } from "@/atoms/modelAtom";
+import { modalState, movieState } from "@/atoms/modalAtom";
 
 const Modal = () => {
   const [movie, setMovie] = useRecoilState(movieState);

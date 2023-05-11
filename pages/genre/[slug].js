@@ -1,14 +1,24 @@
 import { useRef, useState } from "react";
-import { getMovie } from "../getMovie";
+import { getMovie } from "../../utils/getMovie.js";
 import { useEffect } from "react";
 import Item from "../../components/Item";
 import Header from "../../components/Header";
+
 export function getStaticPaths() {
   return {
     paths: [
       {
         params: {
-          id: "28",
+          slug: "99",
+        },
+        params: {
+          slug: "35",
+        },
+        params: {
+          slug: "28",
+        },
+        params: {
+          slug: "10749",
         },
       },
     ],
@@ -16,7 +26,8 @@ export function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps(context) {
+  const { params } = context;
   const movie = await getMovie(params);
 
   return {

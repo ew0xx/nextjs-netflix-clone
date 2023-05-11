@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { useContext } from "react";
 import { useRecoilState } from "recoil";
-import { modalState, movieState } from "@/atoms/modelAtom";
+import { modalState, movieState } from "@/atoms/modalAtom";
 interface Props {
   netflixOriginals: Movie[];
 }

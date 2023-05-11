@@ -9,7 +9,7 @@ import { useContext } from "react";
 import Modal from "@/components/Modal";
 import Head from "next/head";
 import { useRecoilValue } from "recoil";
-import { modalState, movieState } from "@/atoms/modelAtom";
+import { modalState, movieState } from "@/atoms/modalAtom";
 import Link from "next/link";
 
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
@@ -45,7 +45,7 @@ export default function Home({
     >
       <Head>
         <title>
-          {movie?.title || movie?.original_name || "Home"} - Netflix
+          {movie?.title || movie?.original_name || "Home"} - Nextflix
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
