@@ -10,7 +10,7 @@ export function getStaticPaths() {
     paths: [
       {
         params: {
-          slug: "action", //99
+          slug: "action",
         },
       },
     ],
@@ -20,10 +20,11 @@ export function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug = "action" } }) {
   const movie = await getMovie(slug);
+  const movies = JSON.stringify(movie);
 
   return {
     props: {
-      movie,
+      movies,
     },
   };
 }
