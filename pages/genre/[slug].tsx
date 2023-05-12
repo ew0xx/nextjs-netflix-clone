@@ -1,24 +1,16 @@
 import { useRef, useState } from "react";
-import { getMovie } from "../../utils/getMovie.js";
+import { getMovie } from "../../utils/getMovie";
 import { useEffect } from "react";
 import Item from "../../components/Item";
 import Header from "../../components/Header";
+import { Movie } from "@/typings";
 
 export function getStaticPaths() {
   return {
     paths: [
       {
         params: {
-          slug: "99",
-        },
-        params: {
-          slug: "35",
-        },
-        params: {
-          slug: "28",
-        },
-        params: {
-          slug: "10749",
+          slug: "action", //99
         },
       },
     ],
@@ -26,9 +18,8 @@ export function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
-  const { params } = context;
-  const movie = await getMovie(params);
+export async function getStaticProps({ params: { slug = "action" } }) {
+  const movie = await getMovie(slug);
 
   return {
     props: {
@@ -37,15 +28,14 @@ export async function getStaticProps(context) {
   };
 }
 
-const Movies = ({ movie }) => {
+const Movies = ({ movie }: Movie | any) => {
   const movies = movie.props.movie;
   return (
     <div>
       <Header />
       <div className="text-white">
-        {movie.genre_id}
         <div className="flex flex-wrap items-center space-x-0.5 md:space-x-2.5 md:p-2">
-          {movies.map((movie) => (
+          {movies?.map((movie: Movie) => (
             <Item key={movie.id} movie={movie} />
           ))}
         </div>

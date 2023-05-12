@@ -11,7 +11,6 @@ import Head from "next/head";
 import { useRecoilValue } from "recoil";
 import { modalState, movieState } from "@/atoms/modalAtom";
 import Link from "next/link";
-
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 interface Props {

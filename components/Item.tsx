@@ -31,8 +31,9 @@ const Item = ({ movie }: Props) => {
               movie.backdrop_path || movie.poster_path
             }`}
             alt="Thumbnail"
+            width={300}
+            height={200}
             className="rounded-sm object-cover md:rounded"
-            fill
           />
         </div>
       </div>

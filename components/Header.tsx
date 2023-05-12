@@ -31,16 +31,16 @@ const Header = () => {
           <Link href="/">
             <li className="headerLink">Home</li>
           </Link>
-          <Link href={`/genre/${28}`}>
+          <Link href={`/genre/action`}>
             <li className="headerLink">Action Movies</li>
           </Link>
-          <Link href={`/genre/${35}`}>
+          <Link href={`/genre/comedy`}>
             <li className="headerLink">Comedy Movies</li>
           </Link>
-          <Link href={`/genre/${10749}`}>
+          <Link href={`/genre/romance`}>
             <li className="headerLink">Romance Movies</li>
           </Link>
-          <Link href={`/genre/${99}`}>
+          <Link href={`/genre/documantaries`}>
             <li className="headerLink">Documantaries</li>
           </Link>
         </ul>
