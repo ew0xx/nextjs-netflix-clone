@@ -1,7 +1,7 @@
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=`;
 
-export const getMovie = async (slug: string) => {
+export const getMovie = async (slug = "action") => {
   const movieHash = {
     action: "99",
     comedy: "35",
